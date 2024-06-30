@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2e9bcef-912d-4bbf-b7b5-30d09479008e" name="Changes" comment="Implemented depth-first and breadth-first traversal algorithms">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/HasPath.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Traversals.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Traversals.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +45,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build graph_algorithms.executor": "Run",
+    "Kotlin.HasPathKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.TraversalsKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -60,7 +64,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.TraversalsKt">
+  <component name="RunManager" selected="Kotlin.HasPathKt">
+    <configuration name="HasPathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.HasPathKt" />
+      <module name="graph_algorithms.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.MainKt" />
       <module name="graph_algorithms.main" />
@@ -77,6 +88,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.HasPathKt" />
         <item itemvalue="Kotlin.TraversalsKt" />
         <item itemvalue="Kotlin.MainKt" />
       </list>
@@ -100,7 +112,7 @@
       <workItem from="1719675208962" duration="813000" />
       <workItem from="1719687301125" duration="2300000" />
       <workItem from="1719719045402" duration="204000" />
-      <workItem from="1719722369491" duration="570000" />
+      <workItem from="1719722369491" duration="2724000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -126,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719722655506</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implemented depth-first and breadth-first traversal algorithms">
+      <option name="closed" value="true" />
+      <created>1719722956646</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719722956646</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
