@@ -1,7 +1,7 @@
 package org.example
 
 
-val graph = mapOf(
+private val graph = mapOf(
     "a" to listOf("b", "c"),
     "b" to listOf("d"),
     "c" to listOf("e"),
