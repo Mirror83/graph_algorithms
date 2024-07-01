@@ -54,7 +54,7 @@ fun <T> largestComponentSize(graph: Map<T, List<T>>): Int {
     return largest
 }
 
-fun <T> explore(graph: Map<T, List<T>>, node: T, visitedSet: MutableSet<T>): Boolean {
+private fun <T> explore(graph: Map<T, List<T>>, node: T, visitedSet: MutableSet<T>): Boolean {
     if (visitedSet.contains(node))
         return false
 
@@ -80,7 +80,7 @@ fun <T> explore(graph: Map<T, List<T>>, node: T, visitedSet: MutableSet<T>): Boo
     return true
 }
 
-fun <T> exploreAndCount(graph: Map<T, List<T>>, node: T, visitedSet: MutableSet<T>): Int {
+private fun <T> exploreAndCount(graph: Map<T, List<T>>, node: T, visitedSet: MutableSet<T>): Int {
     if (visitedSet.contains(node))
         return 0
 
