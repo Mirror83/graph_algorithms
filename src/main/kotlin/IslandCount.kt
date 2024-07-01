@@ -78,9 +78,49 @@ private fun getNeighbours(position: Pair<Int, Int>, rows: Int, cols: Int): List<
     return neighbours
 }
 
+private fun getLandSize(grid: List<List<String>>, position: Pair<Int, Int>, visitedSet: MutableSet<Pair<Int, Int>>): Int {
+    if (visitedSet.contains(position)) return 0
+
+    var size = 1
+    visitedSet.add(position)
+    val neighbours = getNeighbours(position, grid.size, grid[0].size)
+
+    for (neighbour in neighbours) {
+        if (grid[neighbour.first][neighbour.second] == "L")
+            size += getLandSize(grid, neighbour, visitedSet)
+    }
+
+    return size
+}
+
+fun minIslandSize(grid: List<List<String>>): Int {
+    var minSize = Int.MAX_VALUE
+    val visitedSet = mutableSetOf<Pair<Int, Int>>()
+
+    for (i in grid.indices) {
+        for (j in grid[0].indices) {
+            if (grid[i][j] != "L") continue
+            val current = Pair(i, j)
+            val landSizeFromCurrent = getLandSize(grid, current, visitedSet)
+            if (landSizeFromCurrent in 1..<minSize)
+                minSize = landSizeFromCurrent
+        }
+    }
+
+    return if (minSize == Int.MAX_VALUE) 0 else minSize
+
+}
+
 fun main() {
+    println("Island Count")
     println(islandCount(grid))  // 3
     println(islandCount(grid2))  // 4
     println(islandCount(grid3))  // 0
     println(islandCount(grid4))  // 1
+
+    println("\nMin Island Size")
+    println(minIslandSize(grid))  // 2
+    println(minIslandSize(grid2))  // 1
+    println(minIslandSize(grid3))  // 0
+    println(minIslandSize(grid4))  // 9
 }
