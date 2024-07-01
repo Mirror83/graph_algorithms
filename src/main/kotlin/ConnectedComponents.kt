@@ -70,9 +70,6 @@ private fun <T> explore(graph: Map<T, List<T>>, node: T, visitedSet: MutableSet<
         visitedSet.add(current)
 
         for (neighbour in graph[current]!!) {
-            if (visitedSet.contains(neighbour))
-                continue
-
             queue.add(neighbour)
         }
     }
@@ -99,9 +96,6 @@ private fun <T> exploreAndCount(graph: Map<T, List<T>>, node: T, visitedSet: Mut
         count += 1
 
         for (neighbour in graph[current]!!) {
-            if (visitedSet.contains(neighbour))
-                continue
-
             queue.add(neighbour)
         }
     }
