@@ -1,0 +1,73 @@
+package org.example
+
+private val grid = listOf(
+    listOf("W", "L", "W", "W", "W"),
+    listOf("W", "L", "W", "W", "W"),
+    listOf("W", "W", "W", "L", "W"),
+    listOf("W", "W", "L", "L", "W"),
+    listOf("L", "W", "W", "L", "L"),
+    listOf("L", "L", "W", "W", "W"),
+)
+
+private val grid2 = listOf(
+    listOf("W", "L", "W", "W", "L", "W"),
+    listOf("L", "L", "W", "W", "L", "W"),
+    listOf("W", "L", "W", "W", "W", "W"),
+    listOf("W", "W", "W", "L", "L", "W"),
+    listOf("W", "L", "W", "L", "L", "W"),
+    listOf("W", "W", "W", "W", "W", "W"),
+)
+
+fun islandCount(grid: List<List<String>>): Int {
+    var islands = 0
+    val visitedSet = mutableSetOf<Pair<Int, Int>>()
+
+    for (i in grid.indices) {
+        for (j in grid[i].indices) {
+            if (grid[i][j] != "L") continue
+
+            val current = Pair(i, j)
+            if (exploreLand(grid, current, visitedSet))
+                islands += 1
+        }
+    }
+
+    return islands
+}
+
+private fun exploreLand(grid: List<List<String>>, position: Pair<Int, Int>, visitedSet: MutableSet<Pair<Int, Int>>): Boolean {
+    if (visitedSet.contains(position)) return false
+
+    visitedSet.add(position)
+
+    val neighbours = getNeighbours(position, grid.size, grid[0].size)
+    for (neighbour in neighbours) {
+        if (grid[neighbour.first][neighbour.second] == "L") {
+            exploreLand(grid, neighbour, visitedSet)
+        }
+    }
+
+    return true
+}
+
+private fun getNeighbours(position: Pair<Int, Int>, rows: Int, cols: Int): List<Pair<Int, Int>> {
+    val left = Pair(position.first, position.second - 1)
+    val right = Pair(position.first, position.second + 1)
+
+    val up = Pair(position.first - 1, position.second)
+    val down = Pair(position.first + 1, position.second)
+
+    val neighbours = mutableListOf<Pair<Int, Int>>()
+    if (left.second >= 0) neighbours.add(left)
+    if (right.second < cols) neighbours.add(right)
+
+    if (up.first > 0) neighbours.add(up)
+    if (down.first < rows) neighbours.add(down)
+
+    return neighbours
+}
+
+fun main() {
+    println(islandCount(grid))  // 3
+    println(islandCount(grid2))  // 4
+}
