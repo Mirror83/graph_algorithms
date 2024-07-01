@@ -18,6 +18,17 @@ private val grid2 = listOf(
     listOf("W", "W", "W", "W", "W", "W"),
 )
 
+private val grid3 = listOf(
+    listOf("W", "W"),
+    listOf("W", "W"),
+)
+
+private val grid4 = listOf(
+    listOf("L", "L", "L"),
+    listOf("L", "L", "L"),
+    listOf("L", "L", "L"),
+)
+
 fun islandCount(grid: List<List<String>>): Int {
     var islands = 0
     val visitedSet = mutableSetOf<Pair<Int, Int>>()
@@ -70,4 +81,6 @@ private fun getNeighbours(position: Pair<Int, Int>, rows: Int, cols: Int): List<
 fun main() {
     println(islandCount(grid))  // 3
     println(islandCount(grid2))  // 4
+    println(islandCount(grid3))  // 0
+    println(islandCount(grid4))  // 1
 }
