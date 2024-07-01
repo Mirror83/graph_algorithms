@@ -9,8 +9,8 @@ private val edgeList = listOf(
     listOf("o", "n"),
 )
 
-private fun List<List<String>>.toAdjacencyList(): Map<String, List<String>> {
-    val graph = mutableMapOf<String, MutableList<String>>()
+fun <T> List<List<T>>.toAdjacencyList(): Map<T, List<T>> {
+    val graph = mutableMapOf<T, MutableList<T>>()
     for (edge in this) {
         val (a, b) = edge
         if (!graph.containsKey(a)) graph[a] = mutableListOf()
