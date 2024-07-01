@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2e9bcef-912d-4bbf-b7b5-30d09479008e" name="Changes" comment="Implemented depth-first and breadth-first traversal algorithms">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/HasPath.kt" afterDir="false" />
+    <list default="true" id="f2e9bcef-912d-4bbf-b7b5-30d09479008e" name="Changes" comment="Made toAdjacencyList a generic function">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Traversals.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Traversals.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +43,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.Build graph_algorithms.executor": "Run",
+    "Kotlin.ConnectedComponentsKt.executor": "Run",
     "Kotlin.HasPathKt.executor": "Run",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.TraversalsKt.executor": "Run",
+    "Kotlin.UndirectedPathKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -64,7 +64,14 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.HasPathKt">
+  <component name="RunManager" selected="Kotlin.ConnectedComponentsKt">
+    <configuration name="ConnectedComponentsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.ConnectedComponentsKt" />
+      <module name="graph_algorithms.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HasPathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.HasPathKt" />
       <module name="graph_algorithms.main" />
@@ -86,8 +93,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UndirectedPathKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.UndirectedPathKt" />
+      <module name="graph_algorithms.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ConnectedComponentsKt" />
+        <item itemvalue="Kotlin.UndirectedPathKt" />
         <item itemvalue="Kotlin.HasPathKt" />
         <item itemvalue="Kotlin.TraversalsKt" />
         <item itemvalue="Kotlin.MainKt" />
@@ -112,7 +128,10 @@
       <workItem from="1719675208962" duration="813000" />
       <workItem from="1719687301125" duration="2300000" />
       <workItem from="1719719045402" duration="204000" />
-      <workItem from="1719722369491" duration="2724000" />
+      <workItem from="1719722369491" duration="6005000" />
+      <workItem from="1719728813616" duration="769000" />
+      <workItem from="1719764937587" duration="2097000" />
+      <workItem from="1719775455633" duration="4628000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -146,7 +165,71 @@
       <option name="project" value="LOCAL" />
       <updated>1719722956646</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Made graph private">
+      <option name="closed" value="true" />
+      <created>1719725142967</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719725142967</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added URL for hasPath problem description">
+      <option name="closed" value="true" />
+      <created>1719725169796</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719725169796</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Implemented hasPath using depth and breadth-first traversal">
+      <option name="closed" value="true" />
+      <created>1719725214334</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719725214334</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added URL for undirected path problem">
+      <option name="closed" value="true" />
+      <created>1719726124897</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719726124897</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added solution for undirectedPath problem">
+      <option name="closed" value="true" />
+      <created>1719765058638</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719765058638</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Implemented largestComponentSize and connectedComponentsCount using breadth-first traversal">
+      <option name="closed" value="true" />
+      <created>1719811061407</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719811061407</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Implemented largestComponentSize and connectedComponentsCount using breadth-first traversal">
+      <option name="closed" value="true" />
+      <created>1719811193270</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719811193270</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Made toAdjacencyList a generic function">
+      <option name="closed" value="true" />
+      <created>1719812233472</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719812233472</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,6 +238,24 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Implemented depth-first and breadth-first traversal algorithms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented depth-first and breadth-first traversal algorithms" />
+    <MESSAGE value="Made graph private" />
+    <MESSAGE value="Added URL for hasPath problem description" />
+    <MESSAGE value="Implemented hasPath using depth and breadth-first traversal" />
+    <MESSAGE value="Added URL for undirected path problem" />
+    <MESSAGE value="Added solution for undirectedPath problem" />
+    <MESSAGE value="Implemented largestComponentSize and connectedComponentsCount using breadth-first traversal" />
+    <MESSAGE value="Made toAdjacencyList a generic function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Made toAdjacencyList a generic function" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/ConnectedComponents.kt</url>
+          <line>83</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
